@@ -1,23 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import styles from "./App.module.scss";
+
+const list = [
+  {
+    text: "sef;osdfsdflkhsdfqqqwpppkdf5648978421",
+  },
+  {
+    text: "sadfg;lkhfs698756",
+  },
+  {
+    text: "asdèlasfjdzfv6sd5f4gsdf6g4fd=/=",
+  },
+  {
+    text: "sef;ossdfgsgdfg5454554",
+  },
+  {
+    text: "sef;osdfsdfl===//=/fsdfèlkhdff",
+  },
+];
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={styles.App}>
+      <div className={styles["notes-list"]}>
+        <ul>
+          {list.map((item) => {
+            return <li>{item.text}</li>;
+          })}
+        </ul>
+      </div>
+      <div className={styles["visu-panel"]}>visualisation droite</div>
     </div>
   );
 }
